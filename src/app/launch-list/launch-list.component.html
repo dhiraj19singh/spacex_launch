@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <div class="title">SpaceX Launch Programs</div>
+    <div class="content-wrapper">
+        <div class="filter-section">
+            <div class="section-wrapper">
+                <div class="sub-title">Filters</div>
+                <div class="filter-section-sub-title">Launch Year</div>
+                <div class="options-wrapper">
+                    <div class="each-option-wrapper" *ngFor="let year of yearList">
+                        <div class="each-option" [ngClass]="{'selected-option':year===filterData.launch_year}"
+                            (click)="selectYear(year)">{{year}}</div>
+                    </div>
+                </div>
+
+                <div class="filter-section-sub-title">Successful Launch</div>
+                <div class="options-wrapper">
+                    <div class="each-option-wrapper" *ngFor="let option of booleanOptions">
+                        <div class="each-option"
+                            [ngClass]="{'selected-option':option.value===filterData.launch_success}"
+                            (click)="selectLaunchSuccess(option)">{{option.label}}</div>
+                    </div>
+                </div>
+
+                <div class="filter-section-sub-title">Successful Landing</div>
+                <div class="options-wrapper">
+                    <div class="each-option-wrapper" *ngFor="let option of booleanOptions">
+                        <div class="each-option" [ngClass]="{'selected-option':option.value===filterData.land_success}"
+                            (click)="selectLandingSuccess(option)">{{option.label}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="data-section">
+            <div class="each-item-wrapper" *ngFor="let launch of launchList">
+                <div class="each-launch">
+                    <div class="launch-image-wrapper">
+                        <img  src="{{launch.links.mission_patch_small}}" />
+                    </div>
+                    <p class="launch-name">{{launch.mission_name}} #{{launch.flight_number}}</p>
+                    <div><span class="bold-text">Mission Ids:</span></div>
+                    <ul class="mission-id-wrapper">
+                        <li class="blue-text" *ngFor="let id of launch.mission_id">{{id}}</li>
+                    </ul>
+                    <div><span class="bold-text">Launch Year:</span>  <span class="blue-text ml5">{{launch.launch_year}}</span></div>
+                    <div><span class="bold-text">Successful Launch:</span>  <span class="blue-text ml5">{{launch.launch_success}}</span></div>
+                    <div><span class="bold-text">Successful Landing:</span>  <span class="blue-text ml5">{{launch.launch_landing}}</span></div>
+                </div>
+            </div>
+            <div class="no-launch" *ngIf="launchList.length ===0">
+                No Launch Available
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-clip-rotate">
+    <p style="font-size: 20px; color:whitesmoke">Loading...</p>
+</ngx-spinner>

@@ -1,0 +1,197 @@
+body{
+    margin: 0 !important;
+    background-color: #f4f4f4;
+}
+.wrapper{
+    /* min-height: calc(100vh); */
+    /* width: calc(100vw); */
+    margin: auto;
+    position: relative;
+    padding: 10px;
+    
+    overflow: auto;
+    max-width: 1024px;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content-wrapper{
+    width: 100%;
+    margin-top: 5px;
+    /* overflow: auto; */
+}
+
+.filter-section{
+    float: left;
+    width: 22%;
+    padding: 5px;
+}
+
+.section-wrapper{
+    background-color: #fff;
+    border-radius: 2px;
+    padding:5px;
+}
+
+.sub-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filter-section-sub-title{
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px dotted;
+    margin: 5px 10%;
+}
+
+.each-option-wrapper{
+    width: 35%;
+    margin:5px 0;
+}
+
+.options-wrapper{
+    overflow: auto;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.each-option{
+    text-align: center;
+    padding: 5px 15px;
+    max-width: 60px;;
+    border-radius: 2px;
+    background-color :#bfd99b;
+    cursor: pointer;
+}
+
+.selected-option{
+    background-color: #7cba01 !important;
+}
+
+
+.each-option-wrapper:nth-child(odd){
+    float: left;  
+}
+
+.each-option-wrapper:nth-child(odd) .each-option{
+    float: left;
+}
+
+.each-option-wrapper:nth-child(even){
+    float: right;
+}
+
+.each-option-wrapper:nth-child(even) .each-option{
+    float: right;
+}
+
+
+/* Data Section Style*/
+.data-section{
+    float: left;
+    width: 74%;
+    padding: 5px;
+}
+
+
+.each-item-wrapper{
+    width: 23%;
+    float: left;
+    margin: 5px 0;
+    padding: 0 5px;
+    height: 350px;
+}
+
+.each-launch{
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    height: 95%;
+}
+
+
+.each-launch .launch-image-wrapper{
+    width: 100%;
+    height: 150px;
+    max-width: 150px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.each-launch .launch-image-wrapper img{
+    width: 75%;
+    max-width: 150px;
+ }
+
+ .each-launch .launch-name{
+    color:#4354bd;
+    font-size: 14px;
+    font-weight: bold;
+ }
+
+
+ .each-launch .bold-text{
+     font-weight: bold;
+     font-size: 14px;
+ }
+
+ .each-launch .mission-id-wrapper {
+    margin: 0  10px!important;
+ }
+
+ .blue-text{
+     color: #7681ec;
+     font-size: 14px;
+ }
+
+ .ml5{
+     margin-left: 5px !important;
+ }
+
+ .no-launch{
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+ }
+
+@media screen and (max-width: 700px) {
+    .filter-section{
+        width: 100%;
+    }
+    
+    .data-section{
+        width: 100%;
+    }
+
+    .each-item-wrapper{
+        width: 95%;
+        margin: 5px auto;
+        height: 300px;
+    }
+
+    .each-launch .launch-image-wrapper{
+        height: 120px;
+    }
+    
+}
+
+
+@media screen and (max-width: 880px) and (min-width:701px) {
+    .each-option{
+        padding: 5px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) and (min-width:701px) {
+    .each-item-wrapper{
+        width: 47%;
+        margin: 5px auto;
+        height: 300px;
+    }
+}
